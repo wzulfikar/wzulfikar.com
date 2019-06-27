@@ -84,6 +84,16 @@ a[href^="https://codesandbox.io/s/"]:after {
 	content: " ▸";
 }
 
+a.reset {
+	display: inline;
+    justify-content: none;
+    align-items: none;
+}
+
+a.reset:after {
+	content: "";
+}
+
 p.figure-text {
 	line-height: 1;
     text-align: center;
