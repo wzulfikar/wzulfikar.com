@@ -178,9 +178,3 @@ div.sharer {
 div.highlight td > pre {
 	margin-bottom: 10px !important;
 }
-
-/* build ID link */
-a#build-id {
-	color: #bfbfbf; 
-	border-bottom: 1px dotted #bfbfbf;
-}
