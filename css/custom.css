@@ -125,9 +125,15 @@ img.pswp__img {
 
 /* adjust detail marker for "Show repl.it" collapsible */
 details.show-repl-it summary {
+    display: list-item;
+    list-style: none;
     color: grey;
 	text-align: right;
     margin-bottom: 10px;
+}
+
+details.show-repl-it[open] > summary {
+  list-style: none;
 }
 
 details.show-repl-it summary::-webkit-details-marker {
