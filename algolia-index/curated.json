@@ -27,6 +27,17 @@
         ]
     },
     {
+        "objectID": "/posts/gotcha",
+        "date": "2019-06-25T12:26:16.000Z",
+        "type": "POST",
+        "title": "Gotcha!",
+        "summary": "Collection of programming gotchas I have personally encountered. And made me confused.",
+        "body": "Shell  details open summary collapse/summary  echo vs echo -n. Use the latter if you want to check for hash. {{ highlight bash \"linenos=table\" }} echo \"hello world\" | shasum -a 256 \t\t trailing newline is included in hash echo -n \"hello world\" | shasum -a 256 \t# use -n to exclude trailing newline{{highlight }}  \t{{ show-repl-it url=\"https://repl.it/@wzulfikar/shell-gotcha-echo?lite=true\" }}  /details  JS  details open summary collapse/summary  Watch out for control characters' padding when encoding to hex. {{ highlight php \"linenos=table\" }} const controlChar = '' const hex = Buffer.from(controlChar).toString('hex') hex == controlChar.charCodeAt(0).toString(16)\t\t\t\t\t// false hex == controlChar.charCodeAt(0).toString(16).padStart(2, '0')\t// true{{highlight }}  \t{{ show-repl-it url=\"https://repl.it/@wzulfikar/js-gotcha-char-code?lite=true\" }}  /details",
+        "tags": [
+            "programming"
+        ]
+    },
+    {
         "objectID": "/posts/graphqlboiler-generator",
         "date": "2018-03-04T16:21:19.000Z",
         "type": "POST",
