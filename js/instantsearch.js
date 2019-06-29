@@ -19,6 +19,7 @@ const search = instantsearch({
 });
 search.addWidget(
     instantsearch.widgets.searchBox({
+		loadingIndicator: 'loading..',
 		container: '#search-box',
 		placeholder: ' \uf002 Search site',
 		autofocus: false,
