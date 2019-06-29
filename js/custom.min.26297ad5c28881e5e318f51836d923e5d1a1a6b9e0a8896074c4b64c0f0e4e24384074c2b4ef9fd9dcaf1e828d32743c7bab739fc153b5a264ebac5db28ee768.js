@@ -1,0 +1,58 @@
+const path=window.location.pathname
+const pathNoSlash=path.replace(/\//g,'')
+if(pathNoSlash){const navItem=$(`nav a[href$=${pathNoSlash}]`)[0]
+if(navItem){navItem.className='cta'}}
+$('a:contains("Run in")').each((i,el)=>{el.target='_blank'
+console.log(el)})
+$('summary.collapsible').click(e=>{e.target.innerText=e.target.innerText=='collapse'?'expand':'collapse'})
+const inlinePopupOpts={$pswp:$('.pswp')[0],options:{index:0,bgOpacity:0.8,showHideOpacity:true},item:{w:800,h:600,}}
+const rePopupAsset=/(.gif|.png|.jpg|.jpeg|.mp4)/
+$('a, img.cover-image').each((i,el)=>{let href=el.href
+if(el.tagName=='IMG'){if(!el.src.endsWith('#featured')){href=el.src
+el.style.cursor='pointer'}}
+if(href&&href.includes('/#fn:')){const id=el.href.split('#').splice(1)[0]
+const footnoteItemEl=document.getElementById(id)
+href=footnoteItemEl.innerText.replace('[return]','').trim()
+if(href.startsWith('/')){const fullPathHref=window.location.origin+href
+footnoteItemEl.innerHTML=footnoteItemEl.innerHTML.replace(href,`<a href=${fullPathHref}>${fullPathHref}</a>`)}}
+if(!rePopupAsset.test(href)){return}
+const item=Object.assign({},inlinePopupOpts.item)
+$(el).click(e=>{e.preventDefault()
+if(href.endsWith('.mp4')){const v=document.createElement('video')
+v.src=href
+v.controls=true
+v.autoplay=true
+v.loop=true
+v.style.top='51%'
+v.style.left='51%'
+v.style.position='absolute'
+v.style.maxWidth='90%'
+v.style.maxHeight='80%'
+v.style.transform='translate(-50%, -50%)'
+item.html=v.outerHTML}else{item.src=href
+item.msrc=href}
+item.title=href.split('/').splice(-1)[0]
+new PhotoSwipe(inlinePopupOpts.$pswp,PhotoSwipeUI_Default,[item],inlinePopupOpts.options).init();})})
+$('details.show-repl-it').click(function(e){const $this=$(this)
+if($this.attr('loaded')){return}
+const loadingIndicator=$this.find('div.repl-loading-indicator')[0]
+const loader=$this.find('div.repl-loader')[0]
+const iframe=document.createElement('iframe')
+iframe.id=(new Date()).getTime()
+iframe.height='400px'
+iframe.width='100%'
+iframe.src=loader.attributes.src.value
+iframe.scrolling='no'
+iframe.frameborder='no'
+iframe.allowtransparency="true"
+iframe.allowfullscreen="true"
+iframe.sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"
+loader.replaceWith(iframe)
+$this.attr('loaded',true)
+document.getElementById(iframe.id).onload=function(){loadingIndicator.remove()}})
+document.querySelectorAll('h1[id],h2[id],h3[id]').forEach(el=>{const id=el.id
+const text=el.innerText
+const firstLetter=text[0]
+const trailingLetters=text.substring(1)
+const styled=`<a href='#${id}'><span class="header--first-letter">${firstLetter}</span>${trailingLetters}</a>`
+el.innerHTML=styled})

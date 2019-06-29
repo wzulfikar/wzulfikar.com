@@ -19,24 +19,9 @@ const search = instantsearch({
 });
 search.addWidget(
     instantsearch.widgets.searchBox({
-		loadingIndicator: 'loading..',
 		container: '#search-box',
 		placeholder: ' \uf002 Search site',
 		autofocus: false,
-    })
-);
-search.addWidget(
-    instantsearch.widgets.currentRefinedValues({
-        container: '#current-refined-values',
-        // This widget can also contain a clear all link to remove all filters,
-        // we disable it in this example since we use `clearAll` widget on its own.
-        clearAll: false
-    })
-);
-search.addWidget(
-    instantsearch.widgets.refinementList({
-        container: '#refinement-list',
-        attributeName: 'categories'
     })
 );
 
