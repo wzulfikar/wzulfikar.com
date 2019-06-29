@@ -26,4 +26,7 @@ const [min, max] = [0, words.length]
 const randomIdx = Math.floor(Math.random() * max) + min
 
 // update header bio
-document.getElementById('header--bio').innerHTML = words[randomIdx]
+const headerBio = document.getElementById('header--bio')
+if (headerBio) {
+	headerBio.innerHTML = words[randomIdx]
+}

@@ -138,8 +138,12 @@ $('details.show-repl-it').click(function(e) {
 	}
 })
 
-// decoreate headers as link
-document.querySelectorAll('h1[id],h2[id],h3[id]').forEach(el => {
+// decorate headers as link
+const bodySelectorPrefix = 'section #post-body'
+const bodySelectorSub = ['h1[id]', 'h2[id]', 'h3[id]']
+	.map(selector => `${bodySelectorPrefix} ${selector}`)
+	.join(',')
+document.querySelectorAll(bodySelectorSub).forEach(el => {
 	const id = el.id
 	const text = el.innerText
 	const firstLetter = text[0]
