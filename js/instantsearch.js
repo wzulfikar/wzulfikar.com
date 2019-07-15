@@ -106,7 +106,7 @@ subIndex.addWidget(
 						<a href="${hit.url}">
 							<h4>
 								<img src="${hit.thumbsUrl}" style="width: 40px; margin: 0px 0.5em 0.2em 0.2em; display: inline-block;"/>
-								<div style="display: inline-block; vertical-align: sub;">
+								<div style="display: inline-block;">
 									<span>${hit._highlightResult.title.value}</span>
 									<span class="subtitle">${hit._highlightResult.description.value}</span>
 									<span class="subtitle" style="font-weight: 400;">${date}</span>
