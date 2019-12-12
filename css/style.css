@@ -1,5 +1,12 @@
 /* Reset */
 
+:root {
+	--maxWidth: 750px;
+	--marginOut: -60px;
+	--font-1: "Work Sans";
+	--font-2: "Helvetica Neue";
+}
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     border: 0;
     font-size: 100%;
@@ -116,7 +123,7 @@ html, body {
 }
 
 body {
-    font: 16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font: 16px/1 var(--font-1), sans-serif;
     color: #666;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -246,7 +253,6 @@ nav.main-nav a.cta {
 
 a, #title, #post-list a:hover, #title:hover {
     text-decoration: none;
-    color: #5badf0;
     color: #5694f1;
 }
 
@@ -284,8 +290,14 @@ ul>li {
 /* Line Height */
 
 #post-body, p {
+    color: #222;
     line-height: 1.7;
 }
+
+#post-body h1 a {
+    color: #222;
+}
+
 #post-body p > a {
   word-break: break-word;
   white-space: pre-wrap;
@@ -335,7 +347,7 @@ em, i {
     margin-top: 40px;
     margin-bottom: 20px;
     color: #222;
-    font: 300 32px/1.4em "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font: 600 42px/1.4em var(--font-1), Helvetica, Arial, sans-serif;
 }
 
 .post h2 {
@@ -366,8 +378,8 @@ em, i {
 }
 
 #post-list h2 {
-    font: normal 17px/1.5em "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #aaa;
+    font: normal 16px/1.5em var(--font-1), Helvetica, Arial, sans-serif;
+    color: #555;
     margin-top: 2px;
 }
 
@@ -498,7 +510,7 @@ Post List
 }
 
 #post-list a {
-    color: #333;
+    color: #007dd1;
     display: block;
     font: bold 19px/1.7 "Helvetica Neue", helvetica, Arial, sans-serif;
 }
@@ -508,7 +520,7 @@ Post List
     position: relative;
     top: 1px;
     font: 300 17px/1.8 "Helvetica Neue", helvetica, Arial, sans-serif;
-    color: #bbb;
+    color: #777;
 }
 
 #post-list-footer {
@@ -806,7 +818,7 @@ h2.month {
     display: inline-block;
     width: 60px;
     margin: 0;
-    color: #8a8a8a;
+    color: #555;
 }
 
 @media screen and (max-width: 768px) {
@@ -819,7 +831,7 @@ h2.month {
 }
 
 .archive .post-link {
-    color: #8a8a8a;
+    color: #555;
 }
 
 .archive .post-item:hover {
